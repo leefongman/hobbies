@@ -45,6 +45,7 @@ class FiveChessServer(FivePlay):
         game = init(1)
         self.pro(game)
 
+
 if __name__ == "__main__":
     addr = ("0.0.0.0", 9000)
     sd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
