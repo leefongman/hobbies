@@ -8,7 +8,7 @@ def grep(args):
 
     for index, line in enumerate(f):
         if key in line:
-            left = ("\033[33m%d\033[32m:\033[0m" % (index + 1)).rjust(dt + 1)
+            left = "\033[33m%s\033[32m:\033[0m" % (str(index + 1).rjust(dt))
             content = line.replace(key, reKey)
             print(left + content, end="")
 
