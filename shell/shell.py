@@ -72,6 +72,7 @@ def runNormal(args, fout, fin, ferr):
         return cmdDict[args[0]](args[1:])
     else:
         call(args, stdout=fout, stdin=fin, stderr=ferr)
+        return RUN
 
 
 def re(args, ch, mode):
@@ -116,7 +117,7 @@ def run(cmd):
     """
     fout, fin, ferr, cmdType, args = init(cmd)
     if cmdType == "NORMAL":
-        runNormal(args, fout, fin, ferr)
+        return runNormal(args, fout, fin, ferr)
     elif cmdType == "RE":
         runRe(args, fout, fin, ferr)
     elif cmdType == "PIPE":
